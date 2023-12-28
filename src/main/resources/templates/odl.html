@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        table {
+            border-spacing: 15px;
+        }
+    </style>
+</head>
+<body>
+<h1>訂單總覽!!</h1>
+<table style="width:100%">
+    <tr>
+        <th>訂單編號</th>
+        <th>訂單日期</th>
+        <th>希望到貨日</th>
+        <th>訂單說明</th>
+        <th>買方名稱</th>
+    </tr>
+    <tr th:each="order  : ${orders }">
+        <td th:text="${order.getOrderN()}"></td>
+        <td th:text="${order.getOrderD()}"></td>
+        <td th:text="${order.getReqD()}"></td>
+        <td th:text="${order.getComm()}"></td>
+        <td th:text="${order.getCname()}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
