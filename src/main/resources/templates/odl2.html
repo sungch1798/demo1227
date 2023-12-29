@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        table {
+            border-spacing: 15px;
+        }
+        th {
+            background: aquamarine;
+        }
+    </style>
+</head>
+<body>
+<h1>顧客總覽!!</h1>
+<table style="width:100%">
+    <tr>
+        <th>顧客編號</th>
+        <th>顧客姓名</th>
+        <th>顧客電話</th>
+        <th>顧客城市</th>
+        <th>顧客國家</th>
+        <th>顧客信用卡額度</th>
+    </tr>
+    <!-- cut 為自訂變數  custs 為List存放資料的地方-->
+    <tr th:each="cut  : ${custs }">
+        <td th:text="${cut.getCnumber()}"></td>
+        <td th:text="${cut.getCname()}"></td>
+        <td th:text="${cut.getPhone()}"></td>
+        <td th:text="${cut.getCountry()}"></td>
+        <td th:text="${cut.getCity()}"></td>
+        <td th:text="${cut.getCredit()}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
